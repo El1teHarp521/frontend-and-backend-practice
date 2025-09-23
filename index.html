@@ -1,1 +1,86 @@
-Тестовая страница
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Семестровая работа - Солоткин Артем Сергеевич</title>
+        <link rel="stylesheet" href="style/style.css" />
+    </head>
+    <body>
+        <div class="page-container">
+            <!-- Хедер -->
+            <header class="header" role="banner">
+                <span class="logo" aria-hidden="true">Семестровая работа</span>
+            </header>
+
+            <!-- Навигация -->
+            <nav class="nav" role="navigation" aria-label="Главное меню">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Главная</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="pages/news.html">Новости</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="pages/practices.html">Практики</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="pages/goods.html">Товары</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="pages/contacts.html">Контакты</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Основная инфо -->
+            <main class="content" id="main" role="main">
+                <section class="profile-header" aria-labelledby="profile-title">
+                    <h1 id="profile-title" class="profile-title">Информация об авторе</h1>
+                    <img class="profile-photo" src="images/photo.jpg" alt="Солоткина Артема Сергеевича" loading="lazy" style="width:10%;border-radius:8px;"/>
+                    <h2 class="profile-name">Солоткин Артем Сергеевич</h2>
+                    <p class="profile-group">ЭФБО-15-24</p>
+                </section>
+
+                <section class="about-me" aria-labelledby="about-title">
+                    <h3 id="about-title" style="margin-top:0;">Обо мне</h3>
+                    <p>
+                        Обо мне: Я родился в Будденовске. В 5 лет переехал в другой город. Там ходил в детский сад, потом в школу. В 4 классе переехал в Москву. Сейчас изучаю программирование, чтобы заниматься тем чем  хочу.
+                    </p>
+                </section>
+
+                <section class="skills-container" aria-label="Навыки">
+                    <div class="skill-tag">HTML/CSS</div>
+                    <div class="skill-tag">JavaScript</div>
+                    <div class="skill-tag">C#/C++</div>
+                    <div class="skill-tag">Python</div>
+                </section>
+
+                <section class="experience-section" aria-labelledby="exp-title">
+                    <h2 id="exp-title" class="section-title">Мой опыт работы</h2>
+
+                    <article class="experience-card" aria-labelledby="exp1">
+                        <h3 id="exp1" class="experience-title">Опыт 1</h3>
+                        <p class="experience-desc">Был Киберспортсменом. Играл и побеждал, выигрывал кубки.</p>
+                    </article>
+
+                    <article class="experience-card" aria-labelledby="exp2">
+                        <h3 id="exp2" class="experience-title">Опыт 2</h3>
+                        <p class="experience-desc"> Был стримером. Вел трансляции и веселился.</p>
+                    </article>
+
+                    <article class="experience-card" aria-labelledby="exp3">
+                        <h3 id="exp3" class="experience-title">Опыт 3</h3>
+                        <p class="experience-desc">  Работал строителем. Строил и строил.</p>
+                    </article>
+                </section>
+            </main>
+
+            <!-- Футер -->
+            <footer class="footer" role="contentinfo">
+                <p>© 2024 Солоткин Артем Сергеевич. ЭФБО-15-24. Все права защищены.</p>
+            </footer>
+        </div>
+    </body>
+</html>
