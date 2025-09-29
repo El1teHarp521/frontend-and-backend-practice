@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Контакты - Солоткин Артем Сергеевич</title>
   <link rel="stylesheet" href="../style/style.css" />
+</head>
 <body>
   <div class="page-container">
     <header class="header" role="banner">
@@ -24,38 +25,158 @@
     <main class="content" role="main" id="main">
       <h1 class="profile-title">Контактная информация</h1>
 
-      <div class="contact-info" style="margin-top:18px;">
+      <div class="contact-info">
         <section class="contact-item experience-card" aria-labelledby="c-email">
-          <h3 id="c-email" class="experience-title">Адрес электронной почты</h3>
-          <p><a href="mailto:solotkin.sas@mirea.ru" style="color:var(--neon-cyan);text-decoration:underline;">solotkin.sas@mirea.ru</a></p>
+          <div class="contact-header">
+            <span class="contact-emoji">📧</span>
+            <h3 id="c-email" class="experience-title">Адрес электронной почты</h3>
+          </div>
+          <p><a href="mailto:solotkin.sas@mirea.ru">solotkin.sas@mirea.ru</a></p>
+        </section>
+
+        <section class="contact-item experience-card" aria-labelledby="c-hours">
+          <div class="contact-header">
+            <span class="contact-emoji">⏰</span>
+            <h3 id="c-hours" class="experience-title">График работы</h3>
+          </div>
+          <p>Пн-Пт: 18:00-20:00</p>
+          <p>Сб-Вс: выходной</p>
         </section>
 
         <section class="contact-item experience-card" aria-labelledby="c-address">
-          <h3 id="c-address" class="experience-title">Адрес</h3>
+          <div class="contact-header">
+            <span class="contact-emoji">📍</span>
+            <h3 id="c-address" class="experience-title">Адрес</h3>
+          </div>
           <p>г. Москва, ул. Ремазова, д. 195</p>
         </section>
 
         <section class="contact-item experience-card" aria-labelledby="c-phone">
-          <h3 id="c-phone" class="experience-title">Телефон</h3>
-          <p><a href="tel:+79999999999" style="color:var(--neon-cyan);text-decoration:underline;">+7 (999) 99-99-99</a></p>
-        </section>
-
-        <section class="contact-item experience-card" aria-labelledby="c-hours">
-          <h3 id="c-hours" class="experience-title">График работы</h3>
-          <p>Пн-Пт: 18:00-20:00</p>
-          <p>Сб-Вс: выходной</p>
+          <div class="contact-header">
+            <span class="contact-emoji">📞</span>
+            <h3 id="c-phone" class="experience-title">Телефон</h3>
+          </div>
+          <p><a href="tel:+79999999999">+7 (999) 99-99-99</a></p>
         </section>
       </div>
 
-      <div class="contact-buttons" style="margin-top:16px;">
-        <a class="btn" href="tel:+79999999999">Позвоните мне</a>
-        <a class="btn" href="mailto:solotkin.as@mirea.ru" style="margin-left:10px;">Написать письмо</a>
+      <div class="contact-actions">
+        <button class="action-btn primary" onclick="contactModal.showModal()">
+          <span class="btn-icon">💬</span>
+          Связаться с нами
+        </button>
+        <a class="action-btn secondary" href="tel:+79999999999">
+          <span class="btn-icon">📞</span>
+          Позвонить
+        </a>
+        <a class="action-btn secondary" href="mailto:solotkin.as@mirea.ru">
+          <span class="btn-icon">✉️</span>
+          Написать письмо
+        </a>
       </div>
     </main>
 
     <footer class="footer" role="contentinfo">
       <p>© 2024 Солоткин Артем Сергеевич. ЭФБО-15-24. Все права защищены.</p>
     </footer>
+
+    <!-- Модальное окно для формы обратной связи -->
+    <dialog id="contactModal">
+      <div class="modal-header">
+        <h2>Форма обратной связи</h2>
+      </div>
+
+      <div class="modal-content">
+        <form id="feedbackForm" method="dialog">
+          <div class="form-group">
+            <label for="name">Имя <span class="required">*</span></label>
+            <input type="text" id="name" name="name" required placeholder="Введите ваше имя">
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Телефон <span class="required">*</span></label>
+            <input type="tel" id="phone" name="phone" required placeholder="+7 (999) 999-99-99">
+          </div>
+
+          <div class="form-group">
+            <label for="email">Электронная почта <span class="required">*</span></label>
+            <input type="email" id="email" name="email" required placeholder="example@mail.ru">
+          </div>
+
+          <div class="form-group">
+            <label for="category">Категория обращения <span class="required">*</span></label>
+            <select id="category" name="category" required>
+              <option value="">Выберите категорию</option>
+              <option value="technical">Техническая поддержка</option>
+              <option value="commercial">Коммерческое предложение</option>
+              <option value="cooperation">Сотрудничество</option>
+              <option value="complaint">Жалоба</option>
+              <option value="suggestion">Предложение</option>
+              <option value="other">Другое</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Текст обращения <span class="required">*</span></label>
+            <textarea id="message" name="message" required placeholder="Опишите вашу проблему или вопрос..."></textarea>
+          </div>
+
+          <div class="modal-actions">
+            <button type="submit" class="modal-btn secondary">Отмена</button>
+            <button type="button" class="modal-btn primary" onclick="submitForm()">Отправить</button>
+          </div>
+        </form>
+      </div>
+    </dialog>
   </div>
+
+  <script>
+    // Функция для отправки формы
+    function submitForm() {
+      const form = document.getElementById('feedbackForm');
+      const formData = new FormData(form);
+
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+
+      // Собираем данные формы
+      const data = {
+        name: formData.get('name'),
+        phone: formData.get('phone'),
+        email: formData.get('email'),
+        category: formData.get('category'),
+        message: formData.get('message')
+      };
+
+      console.log('Данные формы:', data);
+
+      alert('Спасибо! Ваше обращение отправлено. Мы свяжемся с вами в ближайшее время.');
+
+      contactModal.close();
+
+      form.reset();
+    }
+
+    document.getElementById('contactModal').addEventListener('click', function(event) {
+      if (event.target === this) {
+        this.close();
+      }
+    });
+
+    document.getElementById('feedbackForm').addEventListener('keypress', function(event) {
+      if (event.key === 'Enter' && event.target.type !== 'textarea') {
+        event.preventDefault();
+      }
+    });
+
+    document.getElementById('contactModal').addEventListener('show', function() {
+      this.style.position = 'fixed';
+      this.style.top = '50%';
+      this.style.left = '50%';
+      this.style.transform = 'translate(-50%, -50%)';
+    });
+  </script>
 </body>
 </html>
