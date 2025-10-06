@@ -1,55 +1,69 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Товары - Солоткин Артем Сергеевич</title>
+  <!-- Иконка-->
+  <link rel="icon" type="image/x-icon" href="../favicon.ico">
   <link rel="stylesheet" href="../style/style.css" />
 </head>
+
 <body>
-  <div class="page-container">
+  <div class="page">
     <header class="header" role="banner">
-      <span class="logo">Семестровая работа</span>
+      <span class="header__logo">Семестровая работа</span>
+      <button class="theme-switcher" id="themeSwitcher" aria-label="Переключить тему">
+        <span class="theme-switcher__icon" id="themeIcon">🌙</span>
+        <span class="theme-switcher__text" id="themeText">Темная</span>
+      </button>
     </header>
 
     <nav class="nav" role="navigation" aria-label="Главное меню">
-      <ul class="nav-list">
-        <li class="nav-item"><a class="nav-link" href="../index.html">Главная</a></li>
-        <li class="nav-item"><a class="nav-link" href="news.html">Новости</a></li>
-        <li class="nav-item"><a class="nav-link" href="practices.html">Практики</a></li>
-        <li class="nav-item"><a class="nav-link active" href="goods.html" aria-current="page">Товары</a></li>
-        <li class="nav-item"><a class="nav-link" href="contacts.html">Контакты</a></li>
-      </ul>
-    </nav>
+    <ul class="nav__list">
+        <li class="nav__item"><a class="nav__link" href="../index.html">Главная</a></li>
+        <li class="nav__item"><a class="nav__link" href="news.html">Новости</a></li>
+        <li class="nav__item"><a class="nav__link" href="practices.html">Практики</a></li>
+        <li class="nav__item"><a class="nav__link" href="goods.html">Товары</a></li>
+        <li class="nav__item"><a class="nav__link" href="contacts.html">Контакты</a></li>
+        <li class="nav__item"><a class="nav__link nav__link--active" href="vizit.html" aria-current="page">Визитка</a></li>
+    </ul>
+</nav>
 
-    <main class="content" role="main" id="main">
-      <h1 class="profile-title">Наши товары</h1>
+    <main class="main" role="main" id="main">
+      <h1 class="profile__title">Наши товары</h1>
 
-      <section class="goods-grid" aria-label="Список товаров">
-        <article class="product">
-          <div class="product-content">
-            <h3 class="product-title">Товар 1</h3>
-            <p class="product-price">Цена: 17000 руб.</p>
-            <p class="product-description">Описание товара 1. Мышка помощник, с помощью встроенного ИИ помогает найти проблемы в коде.</p>
-            <img src="../images/goods1.jpg" alt="Товар 1" loading="lazy" class="product-image">
+      <section class="goods__grid" aria-label="Список товаров">
+        <article class="card card--discount" data-product-id="1">
+          <div class="card__content">
+            <h3 class="card__title">Товар 1</h3>
+            <p class="card__price">
+              <span class="card__price--old">20000 руб.</span>
+              17000 руб.
+            </p>
+            <p class="card__description">Описание товара 1. Мышка помощник, с помощью встроенного ИИ помогает найти
+              проблемы в коде.</p>
+            <img src="../images/goods1.jpg" alt="Товар 1" loading="lazy" class="card__image">
           </div>
         </article>
 
-        <article class="product">
-          <div class="product-content">
-            <h3 class="product-title">Товар 2</h3>
-            <p class="product-price">Цена: 4500 руб.</p>
-            <p class="product-description">Описание товара 2. Сборник книг для программистов - содержит информацию которая может понадобится во время разработки.</p>
-            <img src="../images/goods2.jpg" alt="Товар 2" loading="lazy" class="product-image">
+        <article class="card" data-product-id="2">
+          <div class="card__content">
+            <h3 class="card__title">Товар 2</h3>
+            <p class="card__price">4500 руб.</p>
+            <p class="card__description">Описание товара 2. Сборник книг для программистов - содержит информацию которая
+              может понадобится во время разработки.</p>
+            <img src="../images/goods2.jpg" alt="Товар 2" loading="lazy" class="card__image">
           </div>
         </article>
 
-        <article class="product">
-          <div class="product-content">
-            <h3 class="product-title">Товар 3</h3>
-            <p class="product-price">Цена: 3000 руб.</p>
-            <p class="product-description">Описание товара 3. Очки для компьютера.</p>
-            <img src="../images/goods3.jpg" alt="Товар 3" loading="lazy" class="product-image">
+        <article class="card" data-product-id="3">
+          <div class="card__content">
+            <h3 class="card__title">Товар 3</h3>
+            <p class="card__price">3000 руб.</p>
+            <p class="card__description">Описание товара 3. Очки для компьютера.</p>
+            <img src="../images/goods3.jpg" alt="Товар 3" loading="lazy" class="card__image">
           </div>
         </article>
       </section>
@@ -59,5 +73,60 @@
       <p>© 2024 Солоткин Артем Сергеевич. ЭФБО-15-24. Все права защищены.</p>
     </footer>
   </div>
+
+  <script>
+    // Функция для применения темы
+    function applyTheme(theme) {
+      document.documentElement.setAttribute('data-theme', theme);
+      localStorage.setItem('theme', theme);
+
+      const themeIcon = document.getElementById('themeIcon');
+      const themeText = document.getElementById('themeText');
+
+      if (theme === 'light') {
+        themeIcon.textContent = '🌞';
+        themeText.textContent = 'Светлая';
+      } else {
+        themeIcon.textContent = '🌙';
+        themeText.textContent = 'Темная';
+      }
+    }
+
+    // Инициализация темы при загрузке страницы
+    function initTheme() {
+      const savedTheme = localStorage.getItem('theme');
+      const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+      if (savedTheme) {
+        applyTheme(savedTheme);
+      } else {
+        applyTheme(systemPrefersDark ? 'dark' : 'light');
+      }
+    }
+
+    // Переключение темы
+    document.getElementById('themeSwitcher').addEventListener('click', () => {
+      const currentTheme = document.documentElement.getAttribute('data-theme');
+      const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+      applyTheme(newTheme);
+    });
+
+    // Инициализируем тему при загрузке
+    document.addEventListener('DOMContentLoaded', initTheme);
+
+    // Интерактивность для карточек товаров
+    document.querySelectorAll('.card').forEach(card => {
+      card.addEventListener('click', function () {
+        this.classList.toggle('card--selected');
+        const productId = this.dataset.productId;
+        if (this.classList.contains('card--selected')) {
+          console.log(`Товар ${productId} добавлен в избранное`);
+        } else {
+          console.log(`Товар ${productId} удален из избранного`);
+        }
+      });
+    });
+  </script>
 </body>
+
 </html>

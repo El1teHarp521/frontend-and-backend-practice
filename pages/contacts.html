@@ -4,73 +4,80 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Контакты - Солоткин Артем Сергеевич</title>
+  <!-- Иконка-->
+  <link rel="icon" type="image/x-icon" href="../favicon.ico">
   <link rel="stylesheet" href="../style/style.css" />
 </head>
 <body>
-  <div class="page-container">
+  <div class="page">
     <header class="header" role="banner">
-      <span class="logo">Семестровая работа</span>
+      <span class="header__logo">Семестровая работа</span>
+      <button class="theme-switcher" id="themeSwitcher" aria-label="Переключить тему">
+        <span class="theme-switcher__icon" id="themeIcon">🌙</span>
+        <span class="theme-switcher__text" id="themeText">Темная</span>
+      </button>
     </header>
 
     <nav class="nav" role="navigation" aria-label="Главное меню">
-      <ul class="nav-list">
-        <li class="nav-item"><a class="nav-link" href="../index.html">Главная</a></li>
-        <li class="nav-item"><a class="nav-link" href="news.html">Новости</a></li>
-        <li class="nav-item"><a class="nav-link" href="practices.html">Практики</a></li>
-        <li class="nav-item"><a class="nav-link" href="goods.html">Товары</a></li>
-        <li class="nav-item"><a class="nav-link active" href="contacts.html" aria-current="page">Контакты</a></li>
-      </ul>
-    </nav>
+    <ul class="nav__list">
+        <li class="nav__item"><a class="nav__link" href="../index.html">Главная</a></li>
+        <li class="nav__item"><a class="nav__link" href="news.html">Новости</a></li>
+        <li class="nav__item"><a class="nav__link" href="practices.html">Практики</a></li>
+        <li class="nav__item"><a class="nav__link" href="goods.html">Товары</a></li>
+        <li class="nav__item"><a class="nav__link" href="contacts.html">Контакты</a></li>
+        <li class="nav__item"><a class="nav__link nav__link--active" href="vizit.html" aria-current="page">Визитка</a></li>
+    </ul>
+</nav>
 
-    <main class="content" role="main" id="main">
-      <h1 class="profile-title">Контактная информация</h1>
+    <main class="main" role="main" id="main">
+      <h1 class="profile__title">Контактная информация</h1>
 
-      <div class="contact-info">
-        <section class="contact-item experience-card" aria-labelledby="c-email">
-          <div class="contact-header">
-            <span class="contact-emoji">📧</span>
-            <h3 id="c-email" class="experience-title">Адрес электронной почты</h3>
+      <div class="contact">
+        <section class="contact__item" aria-labelledby="c-email">
+          <div class="contact__header">
+            <span class="contact__emoji">📧</span>
+            <h3 id="c-email" class="card__title">Адрес электронной почты</h3>
           </div>
           <p><a href="mailto:solotkin.sas@mirea.ru">solotkin.sas@mirea.ru</a></p>
         </section>
 
-        <section class="contact-item experience-card" aria-labelledby="c-hours">
-          <div class="contact-header">
-            <span class="contact-emoji">⏰</span>
-            <h3 id="c-hours" class="experience-title">График работы</h3>
+        <section class="contact__item" aria-labelledby="c-hours">
+          <div class="contact__header">
+            <span class="contact__emoji">⏰</span>
+            <h3 id="c-hours" class="card__title">График работы</h3>
           </div>
           <p>Пн-Пт: 18:00-20:00</p>
           <p>Сб-Вс: выходной</p>
         </section>
 
-        <section class="contact-item experience-card" aria-labelledby="c-address">
-          <div class="contact-header">
-            <span class="contact-emoji">📍</span>
-            <h3 id="c-address" class="experience-title">Адрес</h3>
+        <section class="contact__item" aria-labelledby="c-address">
+          <div class="contact__header">
+            <span class="contact__emoji">📍</span>
+            <h3 id="c-address" class="card__title">Адрес</h3>
           </div>
           <p>г. Москва, ул. Ремазова, д. 195</p>
         </section>
 
-        <section class="contact-item experience-card" aria-labelledby="c-phone">
-          <div class="contact-header">
-            <span class="contact-emoji">📞</span>
-            <h3 id="c-phone" class="experience-title">Телефон</h3>
+        <section class="contact__item" aria-labelledby="c-phone">
+          <div class="contact__header">
+            <span class="contact__emoji">📞</span>
+            <h3 id="c-phone" class="card__title">Телефон</h3>
           </div>
           <p><a href="tel:+79999999999">+7 (999) 99-99-99</a></p>
         </section>
       </div>
 
-      <div class="contact-actions">
-        <button class="action-btn primary" onclick="contactModal.showModal()">
-          <span class="btn-icon">💬</span>
+      <div class="contact__actions">
+        <button class="button button--primary" onclick="openModal()">
+          <span class="button__icon">💬</span>
           Связаться с нами
         </button>
-        <a class="action-btn secondary" href="tel:+79999999999">
-          <span class="btn-icon">📞</span>
+        <a class="button button--secondary" href="tel:+79999999999">
+          <span class="button__icon">📞</span>
           Позвонить
         </a>
-        <a class="action-btn secondary" href="mailto:solotkin.as@mirea.ru">
-          <span class="btn-icon">✉️</span>
+        <a class="button button--secondary" href="mailto:solotkin.sas@mirea.ru">
+          <span class="button__icon">✉️</span>
           Написать письмо
         </a>
       </div>
@@ -81,31 +88,31 @@
     </footer>
 
     <!-- Модальное окно для формы обратной связи -->
-    <dialog id="contactModal">
-      <div class="modal-header">
-        <h2>Форма обратной связи</h2>
+    <dialog class="modal" id="contactModal">
+      <div class="modal__header">
+        <h2 class="modal__title">Форма обратной связи</h2>
       </div>
 
-      <div class="modal-content">
-        <form id="feedbackForm" method="dialog">
-          <div class="form-group">
-            <label for="name">Имя <span class="required">*</span></label>
-            <input type="text" id="name" name="name" required placeholder="Введите ваше имя">
+      <div class="modal__content">
+        <form class="form" id="feedbackForm" method="dialog">
+          <div class="form__group">
+            <label for="name" class="form__label">Имя <span class="form__required">*</span></label>
+            <input type="text" id="name" name="name" class="form__input" required placeholder="Введите ваше имя">
           </div>
 
-          <div class="form-group">
-            <label for="phone">Телефон <span class="required">*</span></label>
-            <input type="tel" id="phone" name="phone" required placeholder="+7 (999) 999-99-99">
+          <div class="form__group">
+            <label for="phone" class="form__label">Телефон <span class="form__required">*</span></label>
+            <input type="tel" id="phone" name="phone" class="form__input" required placeholder="+7 (999) 999-99-99">
           </div>
 
-          <div class="form-group">
-            <label for="email">Электронная почта <span class="required">*</span></label>
-            <input type="email" id="email" name="email" required placeholder="example@mail.ru">
+          <div class="form__group">
+            <label for="email" class="form__label">Электронная почта <span class="form__required">*</span></label>
+            <input type="email" id="email" name="email" class="form__input" required placeholder="example@mail.ru">
           </div>
 
-          <div class="form-group">
-            <label for="category">Категория обращения <span class="required">*</span></label>
-            <select id="category" name="category" required>
+          <div class="form__group">
+            <label for="category" class="form__label">Категория обращения <span class="form__required">*</span></label>
+            <select id="category" name="category" class="form__select" required>
               <option value="">Выберите категорию</option>
               <option value="technical">Техническая поддержка</option>
               <option value="commercial">Коммерческое предложение</option>
@@ -116,14 +123,14 @@
             </select>
           </div>
 
-          <div class="form-group">
-            <label for="message">Текст обращения <span class="required">*</span></label>
-            <textarea id="message" name="message" required placeholder="Опишите вашу проблему или вопрос..."></textarea>
+          <div class="form__group">
+            <label for="message" class="form__label">Текст обращения <span class="form__required">*</span></label>
+            <textarea id="message" name="message" class="form__textarea" required placeholder="Опишите вашу проблему или вопрос..."></textarea>
           </div>
 
-          <div class="modal-actions">
-            <button type="submit" class="modal-btn secondary">Отмена</button>
-            <button type="button" class="modal-btn primary" onclick="submitForm()">Отправить</button>
+          <div class="modal__actions">
+            <button type="button" class="button button--secondary" onclick="closeModal()">Отмена</button>
+            <button type="button" class="button button--primary" onclick="submitForm()">Отправить</button>
           </div>
         </form>
       </div>
@@ -131,51 +138,96 @@
   </div>
 
   <script>
-    // Функция для отправки формы
-    function submitForm() {
-      const form = document.getElementById('feedbackForm');
-      const formData = new FormData(form);
-
-      if (!form.checkValidity()) {
-        form.reportValidity();
-        return;
-      }
-
-      // Собираем данные формы
-      const data = {
-        name: formData.get('name'),
-        phone: formData.get('phone'),
-        email: formData.get('email'),
-        category: formData.get('category'),
-        message: formData.get('message')
-      };
-
-      console.log('Данные формы:', data);
-
-      alert('Спасибо! Ваше обращение отправлено. Мы свяжемся с вами в ближайшее время.');
-
-      contactModal.close();
-
-      form.reset();
+    // Функция для применения темы
+    function applyTheme(theme) {
+        document.documentElement.setAttribute('data-theme', theme);
+        localStorage.setItem('theme', theme);
+        
+        const themeIcon = document.getElementById('themeIcon');
+        const themeText = document.getElementById('themeText');
+        
+        if (theme === 'light') {
+            themeIcon.textContent = '🌞';
+            themeText.textContent = 'Светлая';
+        } else {
+            themeIcon.textContent = '🌙';
+            themeText.textContent = 'Темная';
+        }
     }
 
-    document.getElementById('contactModal').addEventListener('click', function(event) {
-      if (event.target === this) {
-        this.close();
-      }
+    // Инициализация темы при загрузке страницы
+    function initTheme() {
+        const savedTheme = localStorage.getItem('theme');
+        const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        
+        if (savedTheme) {
+            applyTheme(savedTheme);
+        } else {
+            applyTheme(systemPrefersDark ? 'dark' : 'light');
+        }
+    }
+
+    // Переключение темы
+    document.getElementById('themeSwitcher').addEventListener('click', () => {
+        const currentTheme = document.documentElement.getAttribute('data-theme');
+        const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+        applyTheme(newTheme);
     });
 
-    document.getElementById('feedbackForm').addEventListener('keypress', function(event) {
-      if (event.key === 'Enter' && event.target.type !== 'textarea') {
-        event.preventDefault();
-      }
+    // Инициализируем тему при загрузке
+    document.addEventListener('DOMContentLoaded', initTheme);
+
+    const contactModal = document.getElementById('contactModal');
+    const feedbackForm = document.getElementById('feedbackForm');
+
+    function openModal() {
+        contactModal.showModal();
+        document.getElementById('name').focus();
+    }
+
+    function closeModal() {
+        contactModal.close();
+        feedbackForm.reset();
+    }
+
+    function submitForm() {
+        const formData = new FormData(feedbackForm);
+        
+        if (!feedbackForm.checkValidity()) {
+            feedbackForm.reportValidity();
+            return;
+        }
+
+        const data = {
+            name: formData.get('name'),
+            phone: formData.get('phone'),
+            email: formData.get('email'),
+            category: formData.get('category'),
+            message: formData.get('message')
+        };
+
+        console.log('Данные формы:', data);
+        alert('Спасибо! Ваше обращение отправлено. Мы свяжемся с вами в ближайшее время.');
+        closeModal();
+    }
+
+    // Обработчики событий для модального окна
+    contactModal.addEventListener('click', function(event) {
+        if (event.target === this) {
+            closeModal();
+        }
     });
 
-    document.getElementById('contactModal').addEventListener('show', function() {
-      this.style.position = 'fixed';
-      this.style.top = '50%';
-      this.style.left = '50%';
-      this.style.transform = 'translate(-50%, -50%)';
+    contactModal.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape') {
+            closeModal();
+        }
+    });
+
+    feedbackForm.addEventListener('keypress', function(event) {
+        if (event.key === 'Enter' && event.target.type !== 'textarea') {
+            event.preventDefault();
+        }
     });
   </script>
 </body>

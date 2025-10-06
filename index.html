@@ -1,87 +1,146 @@
 <!DOCTYPE html>
 <html lang="ru">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Семестровая работа - Солоткин Артем Сергеевич</title>
-        <link rel="stylesheet" href="style/style.css" />
-    </head>
-    <body>
-        <div class="page-container">
-            <!-- Хедер -->
-            <header class="header" role="banner">
-                <span class="logo" aria-hidden="true">Семестровая работа</span>
-            </header>
 
-            <!-- Навигация -->
-            <nav class="nav" role="navigation" aria-label="Главное меню">
-                <ul class="nav-list">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="index.html">Главная</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="pages/news.html">Новости</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="pages/practices.html">Практики</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="pages/goods.html">Товары</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="pages/contacts.html">Контакты</a>
-                    </li>
-                </ul>
-            </nav>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Семестровая работа - Солоткин Артем Сергеевич</title>
+    <!--Иконка-->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="style/style.css" />
+</head>
 
-            <!-- Основная инфо -->
-            <main class="content" id="main" role="main">
-                <section class="profile-header" aria-labelledby="profile-title">
-                    <h1 id="profile-title" class="profile-title">Информация об авторе</h1>
-                    <img class="profile-photo" src="images/photo.jpg" alt="Солоткина Артема Сергеевича" loading="lazy"/>
-                    <h2 class="profile-name">Солоткин Артем Сергеевич</h2>
-                    <p class="profile-group">ЭФБО-15-24</p>
-                </section>
+<body>
+    <div class="page">
+        <!-- Хедер -->
+        <header class="header" role="banner">
+            <span class="header__logo">Семестровая работа</span>
+            <button class="theme-switcher" id="themeSwitcher" aria-label="Переключить тему">
+                <span class="theme-switcher__icon" id="themeIcon">🌙</span>
+                <span class="theme-switcher__text" id="themeText">Темная</span>
+            </button>
+        </header>
 
-                <section class="about-me" aria-labelledby="about-title">
-                    <h3 id="about-title">Обо мне</h3>
-                    <p>
-                        Обо мне: Я родился в Будденовске. В 5 лет переехал в другой город. Там ходил в детский сад, потом в школу. В 4 классе переехал в Москву. Сейчас изучаю программирование, чтобы заниматься тем чем хочу.
-                    </p>
-                </section>
+        <!-- Навигация -->
+        <nav class="nav" role="navigation" aria-label="Главное меню">
+    <ul class="nav__list">
+        <li class="nav__item"><a class="nav__link" href="index.html">Главная</a></li>
+        <li class="nav__item"><a class="nav__link" href="pages/news.html">Новости</a></li>
+        <li class="nav__item"><a class="nav__link" href="pages/practices.html">Практики</a></li>
+        <li class="nav__item"><a class="nav__link" href="pages/goods.html">Товары</a></li>
+        <li class="nav__item"><a class="nav__link" href="pages/contacts.html">Контакты</a></li>
+        <li class="nav__item"><a class="nav__link nav__link--active" href="pages/vizit.html" aria-current="page">Визитка</a></li>
+    </ul>
+</nav>
 
-                <section class="skills-container" aria-label="Навыки">
-                    <div class="skill-tag">HTML/CSS</div>
-                    <div class="skill-tag">JavaScript</div>
-                    <div class="skill-tag">C#/C++</div>
-                    <div class="skill-tag">Python</div>
-                </section>
+        <!-- Основной контент -->
+        <main class="main" id="main" role="main">
+            <section class="profile" aria-labelledby="profile-title">
+                <h1 id="profile-title" class="profile__title">Информация об авторе</h1>
+                <img class="profile__photo" src="images/photo.jpg" alt="Фотография Солоткина Артема Сергеевича"
+                    loading="lazy" />
+                <h2 class="profile__name">Солоткин Артем Сергеевич</h2>
+                <p class="profile__group">ЭФБО-15-24</p>
+            </section>
 
-                <section class="experience-container" aria-labelledby="exp-title">
-                    <h2 id="exp-title" class="section-title">Мой опыт работы</h2>
-                    <div class="experience-grid">
-                        <article class="experience-card" aria-labelledby="exp1">
-                            <h3 id="exp1" class="experience-title">Опыт 1</h3>
-                            <p class="experience-desc">Был Киберспортсменом. Играл и побеждал, выигрывал кубки.</p>
-                        </article>
+            <section class="about section" aria-labelledby="about-title">
+                <h3 id="about-title" class="about__title">Обо мне</h3>
+                <p class="about__text">
+                    Обо мне: Я родился в Будденовске✍️(◔◡◔). В 5 лет переехал в другой Находку ( ͡• ͜ʖ ͡• ) . Там ходил
+                    в детский сад, потом в
+                    школу. В 4 классе переехал в Москву o((⊙﹏⊙))o. Потом поехал на родину к Дмитрию Ивановичу
+                    Менделееву, а именно в город Тобольск,ну а потом снова в Москву （づ￣3￣）づ╭❤️～. Сейчас изучаю
+                    программирование, чтобы заниматься тем чем хочу, а ну и конечно пытаюсь поднять 10 лвл Faceit ☆*:
+                    .｡. o(≧▽≦)o
+                </p>
+            </section>
 
-                        <article class="experience-card" aria-labelledby="exp2">
-                            <h3 id="exp2" class="experience-title">Опыт 2</h3>
-                            <p class="experience-desc">Был стримером. Вел трансляции и веселился.</p>
-                        </article>
+            <section class="skills section" aria-labelledby="skills-title">
+                <h3 id="skills-title" class="section__title">Мои навыки</h3>
+                <div class="skills__container" role="list" aria-label="Список навыков">
+                    <div class="skills__tag" role="listitem">HTML/CSS</div>
+                    <div class="skills__tag" role="listitem">JavaScript</div>
+                    <div class="skills__tag" role="listitem">C#/C++</div>
+                    <div class="skills__tag" role="listitem">Python</div>
+                </div>
+            </section>
 
-                        <article class="experience-card" aria-labelledby="exp3">
-                            <h3 id="exp3" class="experience-title">Опыт 3</h3>
-                            <p class="experience-desc">Работал строителем. Строил и строил.</p>
-                        </article>
-                    </div>
-                </section>
-            </main>
+            <section class="experience section" aria-labelledby="exp-title">
+                <h2 id="exp-title" class="section__title">Мой опыт работы</h2>
+                <div class="experience__grid">
+                    <article class="card" aria-labelledby="exp1">
+                        <h3 id="exp1" class="card__title">Опыт 1</h3>
+                        <p class="card__description">Был Киберспортсменом. Играл и побеждал, выигрывал кубки.</p>
+                    </article>
 
-            <!-- Футер -->
-            <footer class="footer" role="contentinfo">
-                <p>© 2024 Солоткин Артем Сергеевич. ЭФБО-15-24. Все права защищены.</p>
-            </footer>
-        </div>
-    </body>
+                    <article class="card" aria-labelledby="exp2">
+                        <h3 id="exp2" class="card__title">Опыт 2</h3>
+                        <p class="card__description">Был стримером. Вел трансляции и веселился.</p>
+                    </article>
+
+                    <article class="card" aria-labelledby="exp3">
+                        <h3 id="exp3" class="card__title">Опыт 3</h3>
+                        <p class="card__description">Работал строителем. Строил и строил.</p>
+                    </article>
+                </div>
+            </section>
+        </main>
+
+        <!-- Футер -->
+        <footer class="footer" role="contentinfo">
+            <p>© 2024 Солоткин Артем Сергеевич. ЭФБО-15-24. Все права защищены.</p>
+        </footer>
+    </div>
+
+    <script>
+        // Функция для применения темы
+        function applyTheme(theme) {
+            document.documentElement.setAttribute('data-theme', theme);
+            localStorage.setItem('theme', theme);
+
+            const themeIcon = document.getElementById('themeIcon');
+            const themeText = document.getElementById('themeText');
+
+            if (theme === 'light') {
+                themeIcon.textContent = '🌞';
+                themeText.textContent = 'Светлая';
+            } else {
+                themeIcon.textContent = '🌙';
+                themeText.textContent = 'Темная';
+            }
+        }
+
+        // Инициализация темы при загрузке страницы
+        function initTheme() {
+            const savedTheme = localStorage.getItem('theme');
+            const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+            // Если есть сохраненная тема - используем её, иначе системные настройки
+            if (savedTheme) {
+                applyTheme(savedTheme);
+            } else {
+                // Если нет сохраненной темы, используем системные настройки
+                applyTheme(systemPrefersDark ? 'dark' : 'light');
+            }
+        }
+
+        // Переключение темы
+        document.getElementById('themeSwitcher').addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            applyTheme(newTheme);
+        });
+
+        // Инициализируем тему при загрузке
+        document.addEventListener('DOMContentLoaded', initTheme);
+
+        // Интерактивность для карточек
+        document.querySelectorAll('.card').forEach(card => {
+            card.addEventListener('click', function () {
+                this.classList.toggle('card--selected');
+            });
+        });
+    </script>
+</body>
+
 </html>
